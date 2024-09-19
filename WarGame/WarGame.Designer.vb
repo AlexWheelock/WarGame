@@ -24,7 +24,7 @@ Partial Class WarGame
     Private Sub InitializeComponent()
         Me.ListBox1 = New System.Windows.Forms.ListBox()
         Me.QuitButton = New System.Windows.Forms.Button()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.PlayButton = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'ListBox1
@@ -39,7 +39,7 @@ Partial Class WarGame
         Me.ListBox1.Location = New System.Drawing.Point(0, 0)
         Me.ListBox1.Name = "ListBox1"
         Me.ListBox1.Size = New System.Drawing.Size(700, 544)
-        Me.ListBox1.TabIndex = 0
+        Me.ListBox1.TabIndex = 10
         '
         'QuitButton
         '
@@ -56,19 +56,19 @@ Partial Class WarGame
         Me.QuitButton.Text = "Quit"
         Me.QuitButton.UseVisualStyleBackColor = False
         '
-        'Button2
+        'PlayButton
         '
-        Me.Button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
-        Me.Button2.AutoSize = True
-        Me.Button2.BackColor = System.Drawing.Color.Black
-        Me.Button2.Font = New System.Drawing.Font("Consolas", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.Green
-        Me.Button2.Location = New System.Drawing.Point(144, 550)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(204, 41)
-        Me.Button2.TabIndex = 0
-        Me.Button2.Text = "Play"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.PlayButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.PlayButton.AutoSize = True
+        Me.PlayButton.BackColor = System.Drawing.Color.Black
+        Me.PlayButton.Font = New System.Drawing.Font("Consolas", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PlayButton.ForeColor = System.Drawing.Color.Green
+        Me.PlayButton.Location = New System.Drawing.Point(144, 550)
+        Me.PlayButton.Name = "PlayButton"
+        Me.PlayButton.Size = New System.Drawing.Size(204, 41)
+        Me.PlayButton.TabIndex = 0
+        Me.PlayButton.Text = "Play"
+        Me.PlayButton.UseVisualStyleBackColor = False
         '
         'WarGame
         '
@@ -78,7 +78,7 @@ Partial Class WarGame
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.CancelButton = Me.QuitButton
         Me.ClientSize = New System.Drawing.Size(700, 597)
-        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.PlayButton)
         Me.Controls.Add(Me.QuitButton)
         Me.Controls.Add(Me.ListBox1)
         Me.Font = New System.Drawing.Font("Consolas", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
@@ -91,5 +91,5 @@ Partial Class WarGame
 
     Friend WithEvents ListBox1 As ListBox
     Friend WithEvents QuitButton As Button
-    Friend WithEvents Button2 As Button
+    Friend WithEvents PlayButton As Button
 End Class
