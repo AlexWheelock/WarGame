@@ -22,10 +22,74 @@ Partial Class WarGame
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container()
+        Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.QuitButton = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.SuspendLayout()
+        '
+        'ListBox1
+        '
+        Me.ListBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ListBox1.BackColor = System.Drawing.Color.Black
+        Me.ListBox1.Font = New System.Drawing.Font("Consolas", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.ListBox1.ForeColor = System.Drawing.Color.Green
+        Me.ListBox1.FormattingEnabled = True
+        Me.ListBox1.ItemHeight = 20
+        Me.ListBox1.Location = New System.Drawing.Point(0, 0)
+        Me.ListBox1.Name = "ListBox1"
+        Me.ListBox1.Size = New System.Drawing.Size(700, 544)
+        Me.ListBox1.TabIndex = 0
+        '
+        'QuitButton
+        '
+        Me.QuitButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.QuitButton.AutoSize = True
+        Me.QuitButton.BackColor = System.Drawing.Color.Black
+        Me.QuitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
+        Me.QuitButton.Font = New System.Drawing.Font("Consolas", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.QuitButton.ForeColor = System.Drawing.Color.Green
+        Me.QuitButton.Location = New System.Drawing.Point(353, 550)
+        Me.QuitButton.Name = "QuitButton"
+        Me.QuitButton.Size = New System.Drawing.Size(204, 41)
+        Me.QuitButton.TabIndex = 1
+        Me.QuitButton.Text = "Quit"
+        Me.QuitButton.UseVisualStyleBackColor = False
+        '
+        'Button2
+        '
+        Me.Button2.Anchor = System.Windows.Forms.AnchorStyles.Bottom
+        Me.Button2.AutoSize = True
+        Me.Button2.BackColor = System.Drawing.Color.Black
+        Me.Button2.Font = New System.Drawing.Font("Consolas", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.Green
+        Me.Button2.Location = New System.Drawing.Point(144, 550)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(204, 41)
+        Me.Button2.TabIndex = 0
+        Me.Button2.Text = "Play"
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'WarGame
+        '
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Text = "Form1"
+        Me.BackColor = System.Drawing.Color.Black
+        Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.CancelButton = Me.QuitButton
+        Me.ClientSize = New System.Drawing.Size(700, 597)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.QuitButton)
+        Me.Controls.Add(Me.ListBox1)
+        Me.Font = New System.Drawing.Font("Consolas", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Name = "WarGame"
+        Me.Text = "WAR.exe"
+        Me.ResumeLayout(False)
+        Me.PerformLayout()
+
     End Sub
 
+    Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents QuitButton As Button
+    Friend WithEvents Button2 As Button
 End Class
