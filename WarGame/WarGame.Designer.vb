@@ -22,24 +22,28 @@ Partial Class WarGame
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.ListBox1 = New System.Windows.Forms.ListBox()
+        Me.DisplayListBox = New System.Windows.Forms.ListBox()
         Me.QuitButton = New System.Windows.Forms.Button()
         Me.PlayButton = New System.Windows.Forms.Button()
+        Me.PlayerScoreLabel = New System.Windows.Forms.Label()
+        Me.OpponentScoreLabel = New System.Windows.Forms.Label()
+        Me.YourLabel = New System.Windows.Forms.Label()
+        Me.OpponentLabel = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
-        'ListBox1
+        'DisplayListBox
         '
-        Me.ListBox1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+        Me.DisplayListBox.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.ListBox1.BackColor = System.Drawing.Color.Black
-        Me.ListBox1.Font = New System.Drawing.Font("Consolas", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ListBox1.ForeColor = System.Drawing.Color.Green
-        Me.ListBox1.FormattingEnabled = True
-        Me.ListBox1.ItemHeight = 20
-        Me.ListBox1.Location = New System.Drawing.Point(0, 0)
-        Me.ListBox1.Name = "ListBox1"
-        Me.ListBox1.Size = New System.Drawing.Size(700, 544)
-        Me.ListBox1.TabIndex = 10
+        Me.DisplayListBox.BackColor = System.Drawing.Color.Black
+        Me.DisplayListBox.Font = New System.Drawing.Font("Consolas", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.DisplayListBox.ForeColor = System.Drawing.Color.Green
+        Me.DisplayListBox.FormattingEnabled = True
+        Me.DisplayListBox.ItemHeight = 17
+        Me.DisplayListBox.Location = New System.Drawing.Point(0, 0)
+        Me.DisplayListBox.Name = "DisplayListBox"
+        Me.DisplayListBox.Size = New System.Drawing.Size(700, 531)
+        Me.DisplayListBox.TabIndex = 10
         '
         'QuitButton
         '
@@ -49,7 +53,7 @@ Partial Class WarGame
         Me.QuitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.QuitButton.Font = New System.Drawing.Font("Consolas", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.QuitButton.ForeColor = System.Drawing.Color.Green
-        Me.QuitButton.Location = New System.Drawing.Point(353, 550)
+        Me.QuitButton.Location = New System.Drawing.Point(361, 544)
         Me.QuitButton.Name = "QuitButton"
         Me.QuitButton.Size = New System.Drawing.Size(204, 41)
         Me.QuitButton.TabIndex = 1
@@ -63,24 +67,68 @@ Partial Class WarGame
         Me.PlayButton.BackColor = System.Drawing.Color.Black
         Me.PlayButton.Font = New System.Drawing.Font("Consolas", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PlayButton.ForeColor = System.Drawing.Color.Green
-        Me.PlayButton.Location = New System.Drawing.Point(144, 550)
+        Me.PlayButton.Location = New System.Drawing.Point(152, 544)
         Me.PlayButton.Name = "PlayButton"
         Me.PlayButton.Size = New System.Drawing.Size(204, 41)
         Me.PlayButton.TabIndex = 0
         Me.PlayButton.Text = "Play"
         Me.PlayButton.UseVisualStyleBackColor = False
         '
+        'PlayerScoreLabel
+        '
+        Me.PlayerScoreLabel.AutoSize = True
+        Me.PlayerScoreLabel.ForeColor = System.Drawing.Color.White
+        Me.PlayerScoreLabel.Location = New System.Drawing.Point(123, 544)
+        Me.PlayerScoreLabel.Name = "PlayerScoreLabel"
+        Me.PlayerScoreLabel.Size = New System.Drawing.Size(13, 13)
+        Me.PlayerScoreLabel.TabIndex = 12
+        Me.PlayerScoreLabel.Text = "0"
+        '
+        'OpponentScoreLabel
+        '
+        Me.OpponentScoreLabel.AutoSize = True
+        Me.OpponentScoreLabel.ForeColor = System.Drawing.Color.White
+        Me.OpponentScoreLabel.Location = New System.Drawing.Point(123, 560)
+        Me.OpponentScoreLabel.Name = "OpponentScoreLabel"
+        Me.OpponentScoreLabel.Size = New System.Drawing.Size(13, 13)
+        Me.OpponentScoreLabel.TabIndex = 13
+        Me.OpponentScoreLabel.Text = "0"
+        '
+        'YourLabel
+        '
+        Me.YourLabel.AutoSize = True
+        Me.YourLabel.ForeColor = System.Drawing.Color.White
+        Me.YourLabel.Location = New System.Drawing.Point(20, 544)
+        Me.YourLabel.Name = "YourLabel"
+        Me.YourLabel.Size = New System.Drawing.Size(73, 13)
+        Me.YourLabel.TabIndex = 14
+        Me.YourLabel.Text = "Your Score:"
+        '
+        'OpponentLabel
+        '
+        Me.OpponentLabel.AutoSize = True
+        Me.OpponentLabel.ForeColor = System.Drawing.Color.White
+        Me.OpponentLabel.Location = New System.Drawing.Point(20, 560)
+        Me.OpponentLabel.Name = "OpponentLabel"
+        Me.OpponentLabel.Size = New System.Drawing.Size(97, 13)
+        Me.OpponentLabel.TabIndex = 15
+        Me.OpponentLabel.Text = "Opponent Score:"
+        '
         'WarGame
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(7.0!, 15.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(5.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.CancelButton = Me.QuitButton
         Me.ClientSize = New System.Drawing.Size(700, 597)
+        Me.Controls.Add(Me.OpponentLabel)
+        Me.Controls.Add(Me.YourLabel)
+        Me.Controls.Add(Me.OpponentScoreLabel)
+        Me.Controls.Add(Me.PlayerScoreLabel)
         Me.Controls.Add(Me.PlayButton)
         Me.Controls.Add(Me.QuitButton)
-        Me.Controls.Add(Me.ListBox1)
+        Me.Controls.Add(Me.DisplayListBox)
         Me.Font = New System.Drawing.Font("Consolas", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Name = "WarGame"
         Me.Text = "WAR.exe"
@@ -89,7 +137,11 @@ Partial Class WarGame
 
     End Sub
 
-    Friend WithEvents ListBox1 As ListBox
+    Friend WithEvents DisplayListBox As ListBox
     Friend WithEvents QuitButton As Button
     Friend WithEvents PlayButton As Button
+    Friend WithEvents PlayerScoreLabel As Label
+    Friend WithEvents OpponentScoreLabel As Label
+    Friend WithEvents YourLabel As Label
+    Friend WithEvents OpponentLabel As Label
 End Class
