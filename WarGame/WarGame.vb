@@ -12,7 +12,7 @@ Public Class WarGame
         ReDim tracker(13, 4)
     End Sub
 
-    Sub Play()
+    Sub Play(Optional restartGame As Boolean = False)
         Static tracker(13, 4) As Boolean
         Dim suit As Integer
         Dim card As Integer
@@ -26,127 +26,136 @@ Public Class WarGame
         Dim temp As String
         Dim suits() = {$"Spades", $"Clubs", $"Hearts", $"Diamonds"}
 
-
-
         If cardsDrawn = 52 Then
             NewGame(tracker)
+            yourScore = 0
+            opponentScore = 0
         End If
 
-        Do
-            card = DrawCards(13)
-            suit = DrawCards(4)
-        Loop While tracker(card, suit)
-
-        tracker(card, suit) = True
-        cardsDrawn += 1
-        playerCard = card
-        playersuit = suit
-
-        Do
-            card = DrawCards(13)
-            suit = DrawCards(4)
-        Loop While tracker(card, suit)
-
-        tracker(card, suit) = True
-        cardsDrawn += 1
-        opponentCard = card
-        opponentSuit = suit
-
-        If opponentCard > playerCard Then
-            opponentScore += 1
-        ElseIf opponentCard = playerCard Then
+        If restartGame Then
+            NewGame(tracker)
+            yourScore = 0
+            opponentScore = 0
+            UpdateDisplay(tracker)
         Else
-            yourScore += 1
-        End If
+            Do
+                card = DrawCards(13)
+                suit = DrawCards(4)
+            Loop While tracker(card, suit)
 
-        OpponentScoreLabel.Text = CStr(opponentScore)
-        PlayerScoreLabel.Text = CStr(yourScore)
+            tracker(card, suit) = True
+            cardsDrawn += 1
+            playerCard = card
+            playerSuit = suit
 
-        UpdateDisplay(tracker)
+            Do
+                card = DrawCards(13)
+                suit = DrawCards(4)
+            Loop While tracker(card, suit)
 
+            tracker(card, suit) = True
+            cardsDrawn += 1
+            opponentCard = card
+            opponentSuit = suit
 
-
-        DisplayListBox.Items.Add(StrDup(100, "="))
-        DisplayListBox.Items.Add("")
-        Select Case opponentCard
-            Case 0
-                temp = "A"
-            Case 1
-                temp = "2"
-            Case 2
-                temp = "3"
-            Case 3
-                temp = "4"
-            Case 4
-                temp = "5"
-            Case 5
-                temp = "6"
-            Case 6
-                temp = "7"
-            Case 7
-                temp = "8"
-            Case 8
-                temp = "9"
-            Case 9
-                temp = "10"
-            Case 10
-                temp = "J"
-            Case 11
-                temp = "Q"
-            Case 12
-                temp = "K"
-        End Select
-        DisplayListBox.Items.Add($"Opponent card: {temp} of {suits(opponentSuit)}")
-        DisplayListBox.Items.Add("")
-        DisplayListBox.Items.Add(StrDup(100, "-"))
-        DisplayListBox.Items.Add("")
-        Select Case playerCard
-            Case 0
-                temp = "A"
-            Case 1
-                temp = "2"
-            Case 2
-                temp = "3"
-            Case 3
-                temp = "4"
-            Case 4
-                temp = "5"
-            Case 5
-                temp = "6"
-            Case 6
-                temp = "7"
-            Case 7
-                temp = "8"
-            Case 8
-                temp = "9"
-            Case 9
-                temp = "10"
-            Case 10
-                temp = "J"
-            Case 11
-                temp = "Q"
-            Case 12
-                temp = "K"
-        End Select
-        DisplayListBox.Items.Add($"Your card: {temp} of {suits(playerSuit)}")
-        DisplayListBox.Items.Add("")
-        DisplayListBox.Items.Add(StrDup(100, "="))
-
-        If cardsDrawn = 52 Then
-            If opponentScore > yourScore Then
-                MsgBox("All cards have been drawn, opponent wins." & vbCrLf _
-                       & vbCrLf _
-                       & "To continue playing, start a New game.")
-            ElseIf opponentScore = yourScore Then
-                MsgBox("All cards have been drawn, the game resulted in a tie." & vbCrLf _
-       & vbCrLf _
-       & "To continue playing, start a New game.")
+            If opponentCard > playerCard Then
+                opponentScore += 1
+            ElseIf opponentCard = playerCard Then
             Else
-                MsgBox("All cards have been drawn, you win!" & vbCrLf _
-       & vbCrLf _
-       & "To continue playing, start a New game.")
+                yourScore += 1
+            End If
+
+            OpponentScoreLabel.Text = CStr(opponentScore)
+            PlayerScoreLabel.Text = CStr(yourScore)
+
+            UpdateDisplay(tracker)
+
+            DisplayListBox.Items.Add(StrDup(100, "="))
+            DisplayListBox.Items.Add("")
+            Select Case opponentCard
+                Case 0
+                    temp = "A"
+                Case 1
+                    temp = "2"
+                Case 2
+                    temp = "3"
+                Case 3
+                    temp = "4"
+                Case 4
+                    temp = "5"
+                Case 5
+                    temp = "6"
+                Case 6
+                    temp = "7"
+                Case 7
+                    temp = "8"
+                Case 8
+                    temp = "9"
+                Case 9
+                    temp = "10"
+                Case 10
+                    temp = "J"
+                Case 11
+                    temp = "Q"
+                Case 12
+                    temp = "K"
+            End Select
+            DisplayListBox.Items.Add($"Opponent card: {temp} of {suits(opponentSuit)}")
+            DisplayListBox.Items.Add("")
+            DisplayListBox.Items.Add(StrDup(100, "-"))
+            DisplayListBox.Items.Add("")
+            Select Case playerCard
+                Case 0
+                    temp = "A"
+                Case 1
+                    temp = "2"
+                Case 2
+                    temp = "3"
+                Case 3
+                    temp = "4"
+                Case 4
+                    temp = "5"
+                Case 5
+                    temp = "6"
+                Case 6
+                    temp = "7"
+                Case 7
+                    temp = "8"
+                Case 8
+                    temp = "9"
+                Case 9
+                    temp = "10"
+                Case 10
+                    temp = "J"
+                Case 11
+                    temp = "Q"
+                Case 12
+                    temp = "K"
+            End Select
+            DisplayListBox.Items.Add($"Your card: {temp} of {suits(playerSuit)}")
+            DisplayListBox.Items.Add("")
+            DisplayListBox.Items.Add(StrDup(100, "="))
+
+            If cardsDrawn = 52 Then
+                If opponentScore > yourScore Then
+                    MsgBox("All cards have been drawn, opponent wins." & vbCrLf _
+                           & vbCrLf _
+                           & "To continue playing, start a New game.")
+                ElseIf opponentScore = yourScore Then
+                    MsgBox("All cards have been drawn, the game resulted in a tie." & vbCrLf _
+           & vbCrLf _
+           & "To continue playing, start a New game.")
+                Else
+                    MsgBox("All cards have been drawn, you win!" & vbCrLf _
+           & vbCrLf _
+           & "To continue playing, start a New game.")
+                End If
             End If
         End If
+
+
+
+
     End Sub
 
 
@@ -235,4 +244,7 @@ Public Class WarGame
         Me.Close()
     End Sub
 
+    Private Sub NewGameButton_Click(sender As Object, e As EventArgs) Handles NewGameButton.Click
+        Play(True)
+    End Sub
 End Class
