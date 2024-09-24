@@ -25,18 +25,34 @@ Public Class WarGame
         Static opponentScore As Integer
         Dim temp As String
         Dim suits() = {$"Spades", $"Clubs", $"Hearts", $"Diamonds"}
+        Dim winner As String
 
         If cardsDrawn = 52 Then
             NewGame(tracker)
             yourScore = 0
             opponentScore = 0
+            cardsDrawn = 0
+            OpponentScoreLabel.Text = CStr(opponentScore)
+            PlayerScoreLabel.Text = CStr(yourScore)
         End If
 
         If restartGame Then
             NewGame(tracker)
             yourScore = 0
             opponentScore = 0
+            cardsDrawn = 0
+            OpponentScoreLabel.Text = CStr(opponentScore)
+            PlayerScoreLabel.Text = CStr(yourScore)
             UpdateDisplay(tracker)
+            DisplayListBox.Items.Add(StrDup(100, "="))
+            DisplayListBox.Items.Add("")
+            DisplayListBox.Items.Add($"Opponent card: ")
+            DisplayListBox.Items.Add("")
+            DisplayListBox.Items.Add(StrDup(100, "-"))
+            DisplayListBox.Items.Add("")
+            DisplayListBox.Items.Add($"Your card: ")
+            DisplayListBox.Items.Add("")
+            DisplayListBox.Items.Add(StrDup(100, "="))
         Else
             Do
                 card = DrawCards(13)
@@ -135,6 +151,15 @@ Public Class WarGame
             DisplayListBox.Items.Add($"Your card: {temp} of {suits(playerSuit)}")
             DisplayListBox.Items.Add("")
             DisplayListBox.Items.Add(StrDup(100, "="))
+            DisplayListBox.Items.Add("")
+            If opponentCard > playerCard Then
+                DisplayListBox.Items.Add($"Opponent won the round")
+            ElseIf opponentcard = playercard Then
+                DisplayListBox.Items.Add($"Its a tie")
+            Else
+                DisplayListBox.Items.Add($"You won the round!")
+            End If
+
 
             If cardsDrawn = 52 Then
                 If opponentScore > yourScore Then
@@ -152,9 +177,6 @@ Public Class WarGame
                 End If
             End If
         End If
-
-
-
 
     End Sub
 
@@ -233,7 +255,7 @@ Public Class WarGame
 
 
     Private Sub WarGame_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        Play(True)
     End Sub
 
     Private Sub PlayButton_Click(sender As Object, e As EventArgs) Handles PlayButton.Click
