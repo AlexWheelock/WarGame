@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class WarGame
+Partial Class WarGUIForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -30,6 +30,8 @@ Partial Class WarGame
         Me.YourLabel = New System.Windows.Forms.Label()
         Me.OpponentLabel = New System.Windows.Forms.Label()
         Me.NewGameButton = New System.Windows.Forms.Button()
+        Me.RoundsPlayedDisplayLabel = New System.Windows.Forms.Label()
+        Me.RoundsPlayedLabel = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'DisplayListBox
@@ -43,7 +45,7 @@ Partial Class WarGame
         Me.DisplayListBox.ItemHeight = 17
         Me.DisplayListBox.Location = New System.Drawing.Point(0, 0)
         Me.DisplayListBox.Name = "DisplayListBox"
-        Me.DisplayListBox.Size = New System.Drawing.Size(700, 531)
+        Me.DisplayListBox.Size = New System.Drawing.Size(700, 514)
         Me.DisplayListBox.TabIndex = 10
         '
         'QuitButton
@@ -54,9 +56,9 @@ Partial Class WarGame
         Me.QuitButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.QuitButton.Font = New System.Drawing.Font("Consolas", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.QuitButton.ForeColor = System.Drawing.Color.Green
-        Me.QuitButton.Location = New System.Drawing.Point(526, 540)
+        Me.QuitButton.Location = New System.Drawing.Point(526, 524)
         Me.QuitButton.Name = "QuitButton"
-        Me.QuitButton.Size = New System.Drawing.Size(162, 41)
+        Me.QuitButton.Size = New System.Drawing.Size(162, 57)
         Me.QuitButton.TabIndex = 2
         Me.QuitButton.Text = "Quit"
         Me.QuitButton.UseVisualStyleBackColor = False
@@ -68,9 +70,9 @@ Partial Class WarGame
         Me.PlayButton.BackColor = System.Drawing.Color.Black
         Me.PlayButton.Font = New System.Drawing.Font("Consolas", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.PlayButton.ForeColor = System.Drawing.Color.Green
-        Me.PlayButton.Location = New System.Drawing.Point(193, 540)
+        Me.PlayButton.Location = New System.Drawing.Point(193, 524)
         Me.PlayButton.Name = "PlayButton"
-        Me.PlayButton.Size = New System.Drawing.Size(162, 41)
+        Me.PlayButton.Size = New System.Drawing.Size(162, 57)
         Me.PlayButton.TabIndex = 0
         Me.PlayButton.Text = "Play"
         Me.PlayButton.UseVisualStyleBackColor = False
@@ -79,7 +81,7 @@ Partial Class WarGame
         '
         Me.PlayerScoreLabel.AutoSize = True
         Me.PlayerScoreLabel.ForeColor = System.Drawing.Color.White
-        Me.PlayerScoreLabel.Location = New System.Drawing.Point(137, 544)
+        Me.PlayerScoreLabel.Location = New System.Drawing.Point(135, 524)
         Me.PlayerScoreLabel.Name = "PlayerScoreLabel"
         Me.PlayerScoreLabel.Size = New System.Drawing.Size(13, 13)
         Me.PlayerScoreLabel.TabIndex = 12
@@ -89,7 +91,7 @@ Partial Class WarGame
         '
         Me.OpponentScoreLabel.AutoSize = True
         Me.OpponentScoreLabel.ForeColor = System.Drawing.Color.White
-        Me.OpponentScoreLabel.Location = New System.Drawing.Point(137, 560)
+        Me.OpponentScoreLabel.Location = New System.Drawing.Point(135, 540)
         Me.OpponentScoreLabel.Name = "OpponentScoreLabel"
         Me.OpponentScoreLabel.Size = New System.Drawing.Size(13, 13)
         Me.OpponentScoreLabel.TabIndex = 13
@@ -99,7 +101,7 @@ Partial Class WarGame
         '
         Me.YourLabel.AutoSize = True
         Me.YourLabel.ForeColor = System.Drawing.Color.White
-        Me.YourLabel.Location = New System.Drawing.Point(34, 544)
+        Me.YourLabel.Location = New System.Drawing.Point(32, 524)
         Me.YourLabel.Name = "YourLabel"
         Me.YourLabel.Size = New System.Drawing.Size(73, 13)
         Me.YourLabel.TabIndex = 14
@@ -109,7 +111,7 @@ Partial Class WarGame
         '
         Me.OpponentLabel.AutoSize = True
         Me.OpponentLabel.ForeColor = System.Drawing.Color.White
-        Me.OpponentLabel.Location = New System.Drawing.Point(34, 560)
+        Me.OpponentLabel.Location = New System.Drawing.Point(32, 540)
         Me.OpponentLabel.Name = "OpponentLabel"
         Me.OpponentLabel.Size = New System.Drawing.Size(97, 13)
         Me.OpponentLabel.TabIndex = 15
@@ -123,21 +125,44 @@ Partial Class WarGame
         Me.NewGameButton.DialogResult = System.Windows.Forms.DialogResult.Cancel
         Me.NewGameButton.Font = New System.Drawing.Font("Consolas", 10.2!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.NewGameButton.ForeColor = System.Drawing.Color.Green
-        Me.NewGameButton.Location = New System.Drawing.Point(361, 540)
+        Me.NewGameButton.Location = New System.Drawing.Point(361, 524)
         Me.NewGameButton.Name = "NewGameButton"
-        Me.NewGameButton.Size = New System.Drawing.Size(162, 41)
+        Me.NewGameButton.Size = New System.Drawing.Size(162, 57)
         Me.NewGameButton.TabIndex = 1
         Me.NewGameButton.Text = "New Game"
         Me.NewGameButton.UseVisualStyleBackColor = False
         '
-        'WarGame
+        'RoundsPlayedDisplayLabel
         '
+        Me.RoundsPlayedDisplayLabel.AutoSize = True
+        Me.RoundsPlayedDisplayLabel.ForeColor = System.Drawing.Color.White
+        Me.RoundsPlayedDisplayLabel.Location = New System.Drawing.Point(32, 568)
+        Me.RoundsPlayedDisplayLabel.Name = "RoundsPlayedDisplayLabel"
+        Me.RoundsPlayedDisplayLabel.Size = New System.Drawing.Size(91, 13)
+        Me.RoundsPlayedDisplayLabel.TabIndex = 16
+        Me.RoundsPlayedDisplayLabel.Text = "Rounds Played:"
+        '
+        'RoundsPlayedLabel
+        '
+        Me.RoundsPlayedLabel.AutoSize = True
+        Me.RoundsPlayedLabel.ForeColor = System.Drawing.Color.White
+        Me.RoundsPlayedLabel.Location = New System.Drawing.Point(135, 568)
+        Me.RoundsPlayedLabel.Name = "RoundsPlayedLabel"
+        Me.RoundsPlayedLabel.Size = New System.Drawing.Size(13, 13)
+        Me.RoundsPlayedLabel.TabIndex = 17
+        Me.RoundsPlayedLabel.Text = "0"
+        '
+        'WarGUIForm
+        '
+        Me.AcceptButton = Me.PlayButton
         Me.AutoScaleDimensions = New System.Drawing.SizeF(5.0!, 12.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.Black
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
         Me.CancelButton = Me.QuitButton
         Me.ClientSize = New System.Drawing.Size(700, 593)
+        Me.Controls.Add(Me.RoundsPlayedLabel)
+        Me.Controls.Add(Me.RoundsPlayedDisplayLabel)
         Me.Controls.Add(Me.NewGameButton)
         Me.Controls.Add(Me.OpponentLabel)
         Me.Controls.Add(Me.YourLabel)
@@ -147,7 +172,7 @@ Partial Class WarGame
         Me.Controls.Add(Me.QuitButton)
         Me.Controls.Add(Me.DisplayListBox)
         Me.Font = New System.Drawing.Font("Consolas", 7.8!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Name = "WarGame"
+        Me.Name = "WarGUIForm"
         Me.Text = "WAR.exe"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -162,4 +187,6 @@ Partial Class WarGame
     Friend WithEvents YourLabel As Label
     Friend WithEvents OpponentLabel As Label
     Friend WithEvents NewGameButton As Button
+    Friend WithEvents RoundsPlayedDisplayLabel As Label
+    Friend WithEvents RoundsPlayedLabel As Label
 End Class
